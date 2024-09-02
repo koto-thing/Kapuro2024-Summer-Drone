@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{d57ca7a6-9047-43c9-a0c8-a9c66604905d}">
+		<property name="assetPath">
+			<value>Final_NoChorus_NoLimitter.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>74.25</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{516a9085-b7b5-4c10-929a-5a093454441e}</destination>
+		</relationship>
+	</object>
+</objects>
