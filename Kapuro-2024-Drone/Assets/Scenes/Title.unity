@@ -235,7 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 527cb3d1ba124d33a99f7bfe60dbac1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioController: {fileID: 0}
+  audioController: {fileID: 218606522}
   studioEventEmitters: []
 --- !u!1 &159247931
 GameObject:
@@ -1211,7 +1211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f004374cedd429ab3fe0d8e02e9d94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioController: {fileID: 0}
+  audioController: {fileID: 218606522}
   studioBankLoaders: []
 --- !u!1 &1815450807
 GameObject:
