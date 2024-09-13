@@ -19,7 +19,7 @@ public class AudioController : MonoBehaviour
         AudioSources = audioSources;
         parameterController.Initialize(); // パラメータの初期処理
         bankLoader.Initialize(); // バンクの初期処理
-        audioVolumeController.Initialize(); // 音量の初期処理
+        //audioVolumeController.Initialize(); // 音量の初期処理
     }
 
     public void update()

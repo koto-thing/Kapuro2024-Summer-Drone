@@ -6,10 +6,16 @@ public class AriadnePlayer : AbstractPlayers
 {
     [SerializeField] private PlayerState stateAriadne; // プレイヤーの状態
     [SerializeField] private float speedAriadne; // プレイヤーの速度
-    [SerializeField] private Transform directionAriadne; // プレイヤーの方向
     [SerializeField] private float powerAriadne; // プレイヤーのパワー
+    [SerializeField] private bool onCollidedAriadne; // プレイヤーの衝突判定
+    [SerializeField] private Transform directionAriadne; // プレイヤーの方向
     [SerializeField] private ArrowController arrowControllerAriadne; // 矢印のコントローラー
     [SerializeField] private PowerSliderController powerSliderControllerAriadne; // パワースライダーのコントローラー
+
+    private Vector3 moveDirection; // ドローンの移動方向
+    private Vector3 movePosition; // ドローンの移動位置
+    private Tween moveTween; // ドローンの移動タスク
+    private Tween rotateTween; // ドローンの回転タスク
     
     public override PlayerState State { get { return stateAriadne; } }
 
@@ -20,14 +26,69 @@ public class AriadnePlayer : AbstractPlayers
         stateAriadne = nextState;
     }
     
+    // @brief プレイヤーの衝突判定
+    // @param collision 衝突したオブジェクト
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        onCollidedAriadne = true;
+        KillMoveTween(); // ドローンの移動タスクをキャンセル
+        
+        switch(collision.gameObject.tag)
+        {
+            case "Boundable":
+                MoveReflected(collision);
+                break;
+            case "breakable":
+                break;
+        }
+    }
+    
+    // @brief ドローンの移動タスクをキャンセル
+    private void KillMoveTween()
+    {
+        if (moveTween != null && rotateTween != null)
+        {
+            moveTween.Kill();
+            rotateTween.Kill();
+            moveTween = null;
+            rotateTween = null;
+        }
+    }
+    
+    // @brief ドローンの移動反射
+    // @param collision 衝突したオブジェクト
+    private void MoveReflected(Collision2D collision)
+    {
+        Vector2 collisionNormal = collision.contacts[0].normal; // 衝突した表面の法線ベクトルを取得
+        moveDirection = Vector3.Reflect(moveDirection.normalized, collisionNormal); // 移動方向ベクトルを反射させる
+        movePosition = transform.position + moveDirection.normalized * (2 * (powerAriadne + speedAriadne)); // 反射後の移動先位置を計算
+        float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg; // 新しい反射後の方向に基づいて回転角度を計算
+        
+        transform.DOMove(movePosition, 1.0f); // ドローンの移動
+        transform.DORotate(new Vector3(0, 0, angle), 1.0f).OnComplete(OnCompleteMoveTask); // ドローンの回転
+        
+        arrowControllerAriadne.ResetArrow(); // 矢印の初期化
+        powerSliderControllerAriadne.ResetSlider(); // パワースライダーの初期化
+        powerAriadne = 0; // パワーを0にする
+        ChangeState(PlayerState.Idle); // プレイヤーの状態を移行
+    }
+    
+    // @brief ドローンの移動完了時の処理
+    private void OnCompleteMoveTask()
+    {
+        directionAriadne = null; // 矢印のTransformをnullにする
+        onCollidedAriadne = false; // 衝突判定をfalseにする
+    }
+    
     // @brief 初期化処理
     // @override
     public override void Initialize()
     {
         stateAriadne = PlayerState.Idle;
-        speedAriadne = 1f;
-        directionAriadne = null;
+        speedAriadne = 100f;
         powerAriadne = 0;
+        onCollidedAriadne = false;
+        directionAriadne = null;
         arrowControllerAriadne.Initialize(100);
         powerSliderControllerAriadne.Initialize();
     }
@@ -48,7 +109,7 @@ public class AriadnePlayer : AbstractPlayers
         if (powerAriadne != -1) // パワースライダーの値が-1でない場合
         {
             ChangeState(PlayerState.DirectionSetting); // プレイヤーの状態を移行
-            powerSliderControllerAriadne.Initialize(); // パワースライダーの初期化
+            //powerSliderControllerAriadne.Initialize(); // パワースライダーの初期化
         }
     }
     
@@ -60,7 +121,6 @@ public class AriadnePlayer : AbstractPlayers
         if (directionAriadne != null) //矢印のTransformがnullでない場合
         {
             ChangeState(PlayerState.Move); // プレイヤーの状態を移行
-            
         }
     }
     
@@ -68,12 +128,14 @@ public class AriadnePlayer : AbstractPlayers
     // @override
     public override void MoveDrone()
     {
-        Vector3 moveDirection = directionAriadne.up * (1 + powerAriadne / 100);
-        transform.DOMove(transform.position + moveDirection * (powerAriadne + speedAriadne), 1.0f); // ドローンの移動
-        transform.DORotate(new Vector3(0, 0, directionAriadne.eulerAngles.z), 1.0f); // ドローンの回転
+        moveDirection = directionAriadne.up.normalized * (1 + powerAriadne / 100);
+        movePosition = transform.position + moveDirection.normalized * (2 * (powerAriadne + speedAriadne) ); // 移動先位置を計算
+        
+        moveTween = transform.DOMove(movePosition, 1.0f); // ドローンの移動
+        rotateTween = transform.DORotate(new Vector3(0, 0, directionAriadne.eulerAngles.z), 1.0f).OnComplete(OnCompleteMoveTask); // ドローンの回転
+        
         arrowControllerAriadne.ResetArrow(); // 矢印の初期化
         powerSliderControllerAriadne.ResetSlider(); // パワースライダーの初期化
-        directionAriadne = null; // 矢印のTransformをnullにする
         powerAriadne = 0; // パワーを0にする
         ChangeState(PlayerState.Idle); // プレイヤーの状態を移行
     }
