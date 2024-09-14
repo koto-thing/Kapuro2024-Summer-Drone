@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-public class UIManager_StartUp : MonoBehaviour
+public class UIManagerStartUp : MonoBehaviour
 {
     [SerializeField] private FMODLogoController fmodLogoController;
     
-    public void Initialize()
+    public async UniTask Initialize()
     {
         fmodLogoController.Initialize();
+
+        await UniTask.CompletedTask;
     }
 }

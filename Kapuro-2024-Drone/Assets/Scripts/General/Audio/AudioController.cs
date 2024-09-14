@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using FMODUnity;
 using UnityEngine;
 
@@ -14,12 +15,14 @@ public class AudioController : MonoBehaviour
     [SerializeField] private VolumeController audioVolumeController;
     
     // @brief 初期化処理
-    public void Initialize()
+    public async UniTask Initialize()
     {
         AudioSources = audioSources;
         parameterController.Initialize(); // パラメータの初期処理
         bankLoader.Initialize(); // バンクの初期処理
         //audioVolumeController.Initialize(); // 音量の初期処理
+
+        await UniTask.CompletedTask;
     }
 
     public void update()

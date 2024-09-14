@@ -31,14 +31,14 @@ public class AriadnePlayer : AbstractPlayers
     private void OnCollisionEnter2D(Collision2D collision)
     {
         onCollidedAriadne = true;
-        KillMoveTween(); // ドローンの移動タスクをキャンセル
         
         switch(collision.gameObject.tag)
         {
             case "Boundable":
-                MoveReflected(collision);
+                KillMoveTween(); // ドローンの移動タスクをキャンセル
+                MoveReflected(collision); // ドローンの移動反射
                 break;
-            case "breakable":
+            case "Breakable":
                 break;
         }
     }

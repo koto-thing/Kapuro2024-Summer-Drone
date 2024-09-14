@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -8,9 +9,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AbstractPlayers player; //　プレイヤー
     
     // @brief プレイヤーの初期化
-    public void Initialize()
+    public async UniTask Initialize()
     {
         player.Initialize();
+        
+        await UniTask.CompletedTask;
     }
 
     // @brief プレイヤーの状態を更新

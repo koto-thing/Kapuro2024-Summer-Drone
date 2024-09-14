@@ -7,7 +7,7 @@ public class AssetLoader : MonoBehaviour
 {
     [SerializeField] private List<AssetReference> assetReferences2D;
 
-    public async void LoadAssetsAsync()
+    public async UniTask LoadAssetsAsync()
     {
         foreach(var assetReference in assetReferences2D)
         {
@@ -17,5 +17,7 @@ public class AssetLoader : MonoBehaviour
 
             spriteRenderer.sprite = sprite;
         }
+        
+        await UniTask.CompletedTask;
     }
 }
