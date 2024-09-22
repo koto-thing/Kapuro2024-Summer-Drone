@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638625388545046249
-    m_Hash: 507533778
+      ticks: 638626303794667721
+    m_Hash: 903576884
   m_LockFileStatus:
     m_FilePath: D:/kapuro/kapuro-2024-Summer-Drone/Kapuro-2024-Drone/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638625388545139240
-    m_Hash: 3972303117
+      ticks: 638626303794667721
+    m_Hash: 3796873417
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
