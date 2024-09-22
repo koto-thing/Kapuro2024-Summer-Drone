@@ -1,19 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
 
 public class Target : MonoBehaviour, IChangeable
 {
     [SerializeField] private bool isCollided;
+    [SerializeField] private FMODUnity.StudioEventEmitter studioEventEmitter;
     
     public bool IsCollided { get { return isCollided; } }
+
+    private void Start()
+    {
+        studioEventEmitter = GetComponent<StudioEventEmitter>();
+    }
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        isCollided = true;
-        
-        if(collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            isCollided = true;
+            studioEventEmitter.Play();
             ChangeObjectStatus();
+        }
+            
     }
     
     public void ChangeObjectStatus()

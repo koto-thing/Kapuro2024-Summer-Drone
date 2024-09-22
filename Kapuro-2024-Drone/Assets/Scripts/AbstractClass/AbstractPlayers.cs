@@ -12,6 +12,7 @@ public abstract class AbstractPlayers : MonoBehaviour
     
     public virtual PlayerState State { get; }
     public abstract void Initialize();
+    public abstract void PlayerUpdate();
     public abstract void ChangeState();
     public abstract void DirectionSetting();
     public abstract void PowerSetting();

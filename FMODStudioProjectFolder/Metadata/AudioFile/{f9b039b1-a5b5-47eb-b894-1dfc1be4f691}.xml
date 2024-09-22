@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{f9b039b1-a5b5-47eb-b894-1dfc1be4f691}">
+		<property name="assetPath">
+			<value>Balloon_pop_02.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.18126984126984128</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{516a9085-b7b5-4c10-929a-5a093454441e}</destination>
+		</relationship>
+	</object>
+</objects>

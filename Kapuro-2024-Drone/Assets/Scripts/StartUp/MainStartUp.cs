@@ -20,6 +20,6 @@ public class MainStartUp : MonoBehaviour
     // @brief 更新
     private void Update()
     {
-        
+        AudioController.Instance.AudioControllerUpdate();
     }
 }

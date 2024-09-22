@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MainTitle : MonoBehaviour
 {
-    [SerializeField] private AudioController audioController;
     [SerializeField] private ButtonController buttonController;
 
     private async void Start()
@@ -12,9 +11,13 @@ public class MainTitle : MonoBehaviour
         var tasks = new List<UniTask>
         {
             buttonController.Initialize(), // ボタンの初期処理
-            audioController.Initialize() // 音声の初期処理
         };
 
         await UniTask.WhenAll(tasks);
+    }
+    
+    private void Update()
+    {
+        AudioController.Instance.AudioControllerUpdate();
     }
 }

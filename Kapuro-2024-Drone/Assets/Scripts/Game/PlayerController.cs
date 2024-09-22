@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     // @brief プレイヤーの初期化
     public async UniTask Initialize()
     {
+        player = FindObjectsByType<AbstractPlayers>(FindObjectsSortMode.None)[0];
         player.Initialize();
         
         await UniTask.CompletedTask;
@@ -34,5 +35,7 @@ public class PlayerController : MonoBehaviour
                 player.MoveDrone();
                 break;
         }
+        
+        player.PlayerUpdate();
     }
 }

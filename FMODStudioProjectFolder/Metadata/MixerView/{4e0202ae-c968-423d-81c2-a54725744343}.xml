@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="UiMixerView" id="{4e0202ae-c968-423d-81c2-a54725744343}">
+		<property name="name">
+			<value>New Mixer View</value>
+		</property>
+		<relationship name="mixer">
+			<destination>{921a7554-bc51-421d-9e38-e7db80b512b5}</destination>
+		</relationship>
+	</object>
+</objects>

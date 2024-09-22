@@ -1,4 +1,5 @@
-﻿using DG.Tweening;
+﻿using System;
+using DG.Tweening;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -7,10 +8,10 @@ public class AriadnePlayer : AbstractPlayers
     [SerializeField] private PlayerState stateAriadne; // プレイヤーの状態
     [SerializeField] private float speedAriadne; // プレイヤーの速度
     [SerializeField] private float powerAriadne; // プレイヤーのパワー
-    [SerializeField] private bool onCollidedAriadne; // プレイヤーの衝突判定
     [SerializeField] private Transform directionAriadne; // プレイヤーの方向
     [SerializeField] private ArrowController arrowControllerAriadne; // 矢印のコントローラー
     [SerializeField] private PowerSliderController powerSliderControllerAriadne; // パワースライダーのコントローラー
+    [SerializeField] private DroneLostDetecter droneLostDetecter; // ドローンの見失い検知
 
     private Vector3 moveDirection; // ドローンの移動方向
     private Vector3 movePosition; // ドローンの移動位置
@@ -30,8 +31,6 @@ public class AriadnePlayer : AbstractPlayers
     // @param collision 衝突したオブジェクト
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        onCollidedAriadne = true;
-        
         switch(collision.gameObject.tag)
         {
             case "Boundable":
@@ -39,6 +38,17 @@ public class AriadnePlayer : AbstractPlayers
                 MoveReflected(collision); // ドローンの移動反射
                 break;
             case "Breakable":
+                break;
+            case "Target":
+                break;
+            case "SmallBird":
+                Debug.Log("Hit SmallBird");
+                KillMoveTween(); // ドローンの移動タスクをキャンセル
+                MoveRandom(); // ドローンのランダム移動
+                break;
+            case "Block":
+                Debug.Log("Hit Block");
+                KillMoveTween();
                 break;
         }
     }
@@ -77,7 +87,6 @@ public class AriadnePlayer : AbstractPlayers
     private void OnCompleteMoveTask()
     {
         directionAriadne = null; // 矢印のTransformをnullにする
-        onCollidedAriadne = false; // 衝突判定をfalseにする
     }
     
     // @brief 初期化処理
@@ -85,12 +94,19 @@ public class AriadnePlayer : AbstractPlayers
     public override void Initialize()
     {
         stateAriadne = PlayerState.Idle;
-        speedAriadne = 100f;
+        speedAriadne = 150f;
         powerAriadne = 0;
-        onCollidedAriadne = false;
         directionAriadne = null;
-        arrowControllerAriadne.Initialize(100);
-        powerSliderControllerAriadne.Initialize();
+        arrowControllerAriadne.Initialize(300);
+        powerSliderControllerAriadne.Initialize(100f);
+        droneLostDetecter.Initialize();
+    }
+    
+    // @brief プレイヤーの更新処理
+    // @override
+    public override void PlayerUpdate()
+    {
+        droneLostDetecter.DroneLostDetecterUpdate();
     }
 
     // @brief ドローンの状態変更(public)
@@ -138,5 +154,20 @@ public class AriadnePlayer : AbstractPlayers
         powerSliderControllerAriadne.ResetSlider(); // パワースライダーの初期化
         powerAriadne = 0; // パワーを0にする
         ChangeState(PlayerState.Idle); // プレイヤーの状態を移行
+    }
+    
+    // @brief ドローンのランダム移動
+    private void MoveRandom()
+    {
+        // 移動量をランダムに決定
+        float x = UnityEngine.Random.Range(-100f, 100f);
+        float y = UnityEngine.Random.Range(-100f, 100f);
+        float z = UnityEngine.Random.Range(0, 360f);
+        movePosition = new Vector3(x, y, 0);
+        moveDirection = new Vector3(0, 0, z);
+        transform.DOMove(movePosition, 1.0f);
+        transform.DORotate(moveDirection, 1.0f)
+            .SetEase(Ease.InOutSine)
+            .SetLoops(2, LoopType.Incremental);
     }
 }

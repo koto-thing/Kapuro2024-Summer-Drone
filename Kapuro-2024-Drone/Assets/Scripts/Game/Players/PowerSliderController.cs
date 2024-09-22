@@ -10,13 +10,13 @@ public class PowerSliderController : MonoBehaviour
     [SerializeField] private bool state; // パワースライダーの状態
     
     // @brief 初期化
-    public void Initialize()
+    public void Initialize(float newSpeed)
     {
         powerSlider = GetComponent<Slider>();
         powerSlider.maxValue = 100;
         powerSlider.minValue = 0;
         powerSlider.value = 0;
-        speed = 0.1f;
+        speed = newSpeed;
         state = false;
     }
     
@@ -26,7 +26,7 @@ public class PowerSliderController : MonoBehaviour
         switch (state)
         {
             case false:
-                powerSlider.value += speed;
+                powerSlider.value += speed * Time.deltaTime;
                 state = powerSlider.value >= powerSlider.maxValue;
                 break;
             case true:

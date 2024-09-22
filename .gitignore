@@ -106,3 +106,18 @@ Kapuro-2024-Drone/Library/SourceAssetDB
 
 # Ignore Log
 Kapuro-2024-Drone/Logs/*.log
+
+# Ignore AudioFile
+*.mp3
+*.ogg
+*.wav
+*.flac
+
+# Ignore bank file
+*.bank
+
+# Unity generated files
+sharedassets1.assets.resS
+
+# FMOD cache files
+.cache/

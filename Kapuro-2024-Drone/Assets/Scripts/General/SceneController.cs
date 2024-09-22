@@ -8,7 +8,7 @@ public static class SceneController
     // @param sceneName シーン名
     public static void LoadScene(String sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadSceneAsync(sceneName);
         Debug.Log("Loading scene: " + sceneName);
     }
 }

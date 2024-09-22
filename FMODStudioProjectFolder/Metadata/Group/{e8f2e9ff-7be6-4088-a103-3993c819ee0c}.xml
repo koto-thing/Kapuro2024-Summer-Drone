@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerGroup" id="{e8f2e9ff-7be6-4088-a103-3993c819ee0c}">
+		<property name="name">
+			<value>BGM</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{b64351c0-5a19-48b4-ad30-a890c020ec1b}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{f6b7ad89-b915-459b-b9cb-3bf70c906976}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{5c8441d9-5c2c-4c0e-8d7c-3fd0be7a007f}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{b64351c0-5a19-48b4-ad30-a890c020ec1b}">
+		<relationship name="effects">
+			<destination>{dcf7d10c-ed43-4687-9031-8a4bbfb58ac2}</destination>
+			<destination>{e0a5a3fd-7fdf-4e6e-a8b3-9f834885f47a}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{f6b7ad89-b915-459b-b9cb-3bf70c906976}" />
+	<object class="CompressorEffect" id="{dcf7d10c-ed43-4687-9031-8a4bbfb58ac2}">
+		<relationship name="sidechains">
+			<destination>{c36cab64-7e9b-44ed-927d-1989086afcc8}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusFader" id="{e0a5a3fd-7fdf-4e6e-a8b3-9f834885f47a}" />
+</objects>

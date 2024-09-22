@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Boundable
   - Breakable
+  - Target
+  - SmallBird
+  - Block
   layers:
   - Default
   - TransparentFX
@@ -42,4 +45,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: PopUp
+    uniqueID: 3587006373
+    locked: 0
+  - name: Dialogue
+    uniqueID: 1900235169
+    locked: 0
+  - name: Button
+    uniqueID: 3601812339
     locked: 0

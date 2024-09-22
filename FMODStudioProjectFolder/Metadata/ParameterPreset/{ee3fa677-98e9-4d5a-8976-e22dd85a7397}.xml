@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{ee3fa677-98e9-4d5a-8976-e22dd85a7397}">
+		<property name="name">
+			<value>BalloonParam</value>
+		</property>
+		<relationship name="folder">
+			<destination>{4774de10-49bc-4fe6-ae85-9791b63280c9}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{6a069317-45d2-4106-ad51-6ec6ccd99412}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{6a069317-45d2-4106-ad51-6ec6ccd99412}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

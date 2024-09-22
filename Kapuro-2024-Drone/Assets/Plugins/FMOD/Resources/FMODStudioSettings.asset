@@ -332,7 +332,9 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
+  - Mission01Bank
   - SampleBank
+  - TutorialBank
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
