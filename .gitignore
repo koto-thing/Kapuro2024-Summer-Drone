@@ -122,4 +122,5 @@ sharedassets1.assets.resS
 # FMOD cache files
 .cache/
 
-Kapuro-2024-Drone/Assets/Fonts/*
+Assets/Fonts/NotoSansJP-VariableFont_wght SDF.asset
+Assets/Fonts/NotoSansJP-VariableFont_wght SDF.asset.meta
