@@ -50,6 +50,14 @@ public class AriadnePlayer : AbstractPlayers
                 Debug.Log("Hit Block");
                 KillMoveTween();
                 break;
+            case "Wind":
+                Debug.Log("Hit Wind");
+                Wind wind = collision.gameObject.GetComponent<Wind>();
+                KillMoveTween();
+                MoveByWind(wind.WindDirection, wind.WindPower);
+                Debug.Log("Hit Wind");
+                
+                break;
         }
     }
     
@@ -163,11 +171,21 @@ public class AriadnePlayer : AbstractPlayers
         float x = UnityEngine.Random.Range(-100f, 100f);
         float y = UnityEngine.Random.Range(-100f, 100f);
         float z = UnityEngine.Random.Range(0, 360f);
-        movePosition = new Vector3(x, y, 0);
+        movePosition = new Vector3(transform.position.x + x, transform.position.y + y, 0);
         moveDirection = new Vector3(0, 0, z);
         transform.DOMove(movePosition, 1.0f);
         transform.DORotate(moveDirection, 1.0f)
             .SetEase(Ease.InOutSine)
             .SetLoops(2, LoopType.Incremental);
+    }
+
+    private void MoveByWind(Quaternion windDirection, float windPower)
+    {
+        Vector3 windDirectionVector = windDirection * Vector3.forward;
+        moveDirection = windDirectionVector.normalized * (1 + windPower / 100);
+        movePosition = transform.position + moveDirection.normalized * (2 * (windPower + speedAriadne) );
+        
+        moveTween = transform.DOMove(movePosition, 1.0f);
+        rotateTween = transform.DORotate(new Vector3(0, 0, windDirection.eulerAngles.z), 1.0f).OnComplete(OnCompleteMoveTask);
     }
 }

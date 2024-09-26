@@ -21,7 +21,6 @@ public class Target : MonoBehaviour, IChangeable
             studioEventEmitter.Play();
             ChangeObjectStatus();
         }
-            
     }
     
     public void ChangeObjectStatus()

@@ -9,6 +9,7 @@ TagManager:
   - Target
   - SmallBird
   - Block
+  - Wind
   layers:
   - Default
   - TransparentFX
