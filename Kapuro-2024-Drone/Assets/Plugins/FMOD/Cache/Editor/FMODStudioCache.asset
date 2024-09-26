@@ -20,6 +20,46 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1027200
   Exists: 1
+--- !u!114 &-8117449061439563206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SampleBank.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMODStudioProjectFolder/Build/Desktop/SampleBank.bank
+  Name: SampleBank
+  StudioPath: bank:/SampleBank
+  lastModified: 638628918931344613
+  FileSizes:
+  - Name: Desktop
+    Value: 494
+  Exists: 1
+--- !u!114 &-7604718080096479468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMODStudioProjectFolder/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638628918784568361
+  FileSizes:
+  - Name: Desktop
+    Value: 2010
+  Exists: 1
 --- !u!114 &-6462890476801278283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,6 +111,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 298
+--- !u!114 &-6176258718238089309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/GoalFlag
+  m_EditorClassIdentifier: 
+  Path: event:/GoalFlag
+  Guid:
+    Data1: 1821181534
+    Data2: 1327218389
+    Data3: 411689603
+    Data4: 1855559391
+  Banks:
+  - {fileID: 9165784339203823465}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2783
 --- !u!114 &-5934013567727294029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,6 +232,33 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1462
   Exists: 1
+--- !u!114 &-2301085800635711764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Bound
+  m_EditorClassIdentifier: 
+  Path: event:/Bound
+  Guid:
+    Data1: 1777942623
+    Data2: 1078155445
+    Data3: 632567472
+    Data4: -1624639234
+  Banks:
+  - {fileID: 9165784339203823465}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 528
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,25 +272,24 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -3059663877345281342}
-  - {fileID: 3157481946603347316}
-  - {fileID: -8953098337211540000}
-  - {fileID: -5030514589281608752}
-  - {fileID: 7576351284807463849}
+  - {fileID: 2734446416905138245}
+  - {fileID: -7604718080096479468}
+  - {fileID: -8117449061439563206}
+  - {fileID: 2248709542452496422}
+  - {fileID: 9165784339203823465}
   EditorEvents:
-  - {fileID: -5934013567727294029}
-  - {fileID: 260255961525818449}
-  - {fileID: -3486475598268463427}
-  - {fileID: 3963058463443724212}
-  - {fileID: 8433319441149311636}
-  - {fileID: -6252829240817365934}
-  - {fileID: 7942850227092933250}
+  - {fileID: 2127399473088845675}
+  - {fileID: 8764270009477154316}
+  - {fileID: 8648420125965421291}
+  - {fileID: -6176258718238089309}
+  - {fileID: -2301085800635711764}
+  - {fileID: 8604421292974205976}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 3157481946603347316}
+  - {fileID: -7604718080096479468}
   StringsBanks:
-  - {fileID: -3059663877345281342}
-  cacheTime: 638626627774047799
+  - {fileID: 2734446416905138245}
+  cacheTime: 638628918932023395
   cacheVersion: 131619
 --- !u!114 &260255961525818449
 MonoBehaviour:
@@ -225,6 +318,73 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 560
+--- !u!114 &2127399473088845675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Mission01/SE/BirdSpwan
+  m_EditorClassIdentifier: 
+  Path: event:/Mission01/SE/BirdSpwan
+  Guid:
+    Data1: -1141323509
+    Data2: 1079018186
+    Data3: -1554073721
+    Data4: -1997954977
+  Banks:
+  - {fileID: 2248709542452496422}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 298
+--- !u!114 &2248709542452496422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Mission01Bank.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMODStudioProjectFolder/Build/Desktop/Mission01Bank.bank
+  Name: Mission01Bank
+  StudioPath: bank:/Mission01Bank
+  lastModified: 638628918931292696
+  FileSizes:
+  - Name: Desktop
+    Value: 13263424
+  Exists: 1
+--- !u!114 &2734446416905138245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMODStudioProjectFolder/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638628918784578485
+  FileSizes:
+  - Name: Desktop
+    Value: 1424
+  Exists: 1
 --- !u!114 &3157481946603347316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,6 +432,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2783
+--- !u!114 &5001963780925215170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BGM01/BGM01Param
+  m_EditorClassIdentifier: 
+  Name: BGM01Param
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 1690405556
+    data2: 2867360474
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &7576351284807463849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,3 +531,105 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 900129
+--- !u!114 &8604421292974205976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Balloon
+  m_EditorClassIdentifier: 
+  Path: event:/Balloon
+  Guid:
+    Data1: -1992871978
+    Data2: 1189333046
+    Data3: -32221030
+    Data4: -2114591937
+  Banks:
+  - {fileID: 9165784339203823465}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 560
+--- !u!114 &8648420125965421291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Mission01/BGM/BGM01
+  m_EditorClassIdentifier: 
+  Path: event:/Mission01/BGM/BGM01
+  Guid:
+    Data1: -127658783
+    Data2: 1189748311
+    Data3: 64339328
+    Data4: 785176102
+  Banks:
+  - {fileID: 2248709542452496422}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 5001963780925215170}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 900129
+--- !u!114 &8764270009477154316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Mission01/SE/BirdDestroy
+  m_EditorClassIdentifier: 
+  Path: event:/Mission01/SE/BirdDestroy
+  Guid:
+    Data1: 1482834833
+    Data2: 1177591441
+    Data3: 439456682
+    Data4: -1801587033
+  Banks:
+  - {fileID: 2248709542452496422}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 145
+--- !u!114 &9165784339203823465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/TutorialBank.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMODStudioProjectFolder/Build/Desktop/TutorialBank.bank
+  Name: TutorialBank
+  StudioPath: bank:/TutorialBank
+  lastModified: 638628918932023395
+  FileSizes:
+  - Name: Desktop
+    Value: 53376
+  Exists: 1
