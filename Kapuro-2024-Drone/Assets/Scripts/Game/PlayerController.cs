@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     // @brief プレイヤーの状態を更新
     public void PlayerUpdate()
     {
-        switch(player.State)
+        switch(player.State) 
         {
             case AbstractPlayers.PlayerState.Idle:
                 player.ChangeState();
@@ -31,8 +31,8 @@ public class PlayerController : MonoBehaviour
             case AbstractPlayers.PlayerState.DirectionSetting:
                 player.DirectionSetting();
                 break;
-            case AbstractPlayers.PlayerState.Move:
-                player.MoveDrone();
+            case AbstractPlayers.PlayerState.Move: 
+                player.MoveDrone(); 
                 break;
         }
         

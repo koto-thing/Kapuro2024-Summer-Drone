@@ -11,6 +11,7 @@ public abstract class AbstractPlayers : MonoBehaviour
     private ArrowController arrowController;
     
     public virtual PlayerState State { get; }
+    public virtual bool IsOutofControl { get; set; }
     public abstract void Initialize();
     public abstract void PlayerUpdate();
     public abstract void ChangeState();

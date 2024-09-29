@@ -1,0 +1,16 @@
+# テキストファイルに LF を使用するよう設定
+* text eol=lf
+
+# Windows 固有の設定が必要な場合は CRLF を指定
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+
+# Unity のバイナリファイルは改行を変更しない
+*.unity binary
+*.prefab binary
+*.asset binary
+*.meta text eol=lf
+
+# ライブラリやキャッシュファイルは行末を無視
+Library/** binary
+Cache/** binary

@@ -1,6 +1,5 @@
 ﻿using System;
 using DG.Tweening;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class AriadnePlayer : AbstractPlayers
@@ -31,36 +30,66 @@ public class AriadnePlayer : AbstractPlayers
     // @param collision 衝突したオブジェクト
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("Hit " + collision.gameObject.tag);
         switch(collision.gameObject.tag)
         {
             case "Boundable":
                 KillMoveTween(); // ドローンの移動タスクをキャンセル
                 MoveReflected(collision); // ドローンの移動反射
                 break;
+            
             case "Breakable":
                 break;
+            
             case "Target":
                 break;
+            
             case "SmallBird":
                 Debug.Log("Hit SmallBird");
                 KillMoveTween(); // ドローンの移動タスクをキャンセル
                 MoveRandom(); // ドローンのランダム移動
                 break;
+            
             case "Block":
                 Debug.Log("Hit Block");
                 KillMoveTween();
                 break;
+            
             case "Wind":
                 Debug.Log("Hit Wind");
                 Wind wind = collision.gameObject.GetComponent<Wind>();
                 KillMoveTween();
                 MoveByWind(wind.WindDirection, wind.WindPower);
-                Debug.Log("Hit Wind");
-                
+                break;
+            
+            case "SpecialBird":
+                Debug.Log("Hit SpecialBird");
+                KillMoveTween();
+                MoveRandom();
+                break;
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        switch (other.gameObject.tag)
+        {
+            case "Jammer":
+                droneLostDetecter.OnBecameInvisible();
                 break;
         }
     }
     
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        switch (other.gameObject.tag)
+        {
+            case "Jammer":
+                droneLostDetecter.OnBecameVisible();
+                break;
+        }
+    }
+
     // @brief ドローンの移動タスクをキャンセル
     private void KillMoveTween()
     {
@@ -175,17 +204,27 @@ public class AriadnePlayer : AbstractPlayers
         moveDirection = new Vector3(0, 0, z);
         transform.DOMove(movePosition, 1.0f);
         transform.DORotate(moveDirection, 1.0f)
-            .SetEase(Ease.InOutSine)
-            .SetLoops(2, LoopType.Incremental);
+            .SetEase(Ease.InOutSine);
     }
 
     private void MoveByWind(Quaternion windDirection, float windPower)
     {
-        Vector3 windDirectionVector = windDirection * Vector3.forward;
-        moveDirection = windDirectionVector.normalized * (1 + windPower / 100);
-        movePosition = transform.position + moveDirection.normalized * (2 * (windPower + speedAriadne) );
+        // 2D向けに風の向きを取得（z軸の回転角度を使用）
+        float windAngleInRadians = (windDirection.eulerAngles.z + 90) * Mathf.Deg2Rad;
+    
+        // 風の方向ベクトルを計算（2D空間の向き）
+        Vector2 moveDirection2D = new Vector2(Mathf.Cos(windAngleInRadians), Mathf.Sin(windAngleInRadians)) * (1 + windPower / 100);
+
+        // 2D座標での目的地を計算し、z座標は元の位置を維持
+        Vector3 movePosition = new Vector3(
+            transform.position.x + moveDirection2D.x * (2 * (windPower + speedAriadne)),
+            transform.position.y + moveDirection2D.y * (2 * (windPower + speedAriadne)),
+            transform.position.z  // z座標を維持
+        );
+        Sequence moveSequence = DOTween.Sequence(); // 移動と回転のアニメーションをシーケンスで管理
         
-        moveTween = transform.DOMove(movePosition, 1.0f);
-        rotateTween = transform.DORotate(new Vector3(0, 0, windDirection.eulerAngles.z), 1.0f).OnComplete(OnCompleteMoveTask);
+        moveSequence.Append(transform.DOMove(movePosition, 1.0f));
+        moveSequence.Join(transform.DORotate(new Vector3(0, 0, windDirection.eulerAngles.z), 1.0f));
+        moveSequence.OnComplete(OnCompleteMoveTask);
     }
 }

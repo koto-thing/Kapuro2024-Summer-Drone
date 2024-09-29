@@ -10,6 +10,9 @@ TagManager:
   - SmallBird
   - Block
   - Wind
+  - Jammer
+  - Special Bird
+  - BigBird
   layers:
   - Default
   - TransparentFX
@@ -55,4 +58,10 @@ TagManager:
     locked: 0
   - name: Button
     uniqueID: 3601812339
+    locked: 0
+  - name: Info
+    uniqueID: 4078161489
+    locked: 0
+  - name: Switch Animation
+    uniqueID: 2693506589
     locked: 0

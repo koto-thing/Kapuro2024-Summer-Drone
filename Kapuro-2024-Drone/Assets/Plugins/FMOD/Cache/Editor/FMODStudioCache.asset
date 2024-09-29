@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: ../FMODStudioProjectFolder/Build/Desktop/SampleBank.bank
   Name: SampleBank
   StudioPath: bank:/SampleBank
-  lastModified: 638629709379945045
+  lastModified: 638632236091738207
   FileSizes:
   - Name: Desktop
     Value: 1027200
@@ -113,7 +113,7 @@ MonoBehaviour:
   Path: ../FMODStudioProjectFolder/Build/Desktop/TutorialBank.bank
   Name: TutorialBank
   StudioPath: bank:/TutorialBank
-  lastModified: 638624800668650931
+  lastModified: 638628918932023395
   FileSizes:
   - Name: Desktop
     Value: 53376
@@ -160,7 +160,7 @@ MonoBehaviour:
   Path: ../FMODStudioProjectFolder/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638629709379632276
+  lastModified: 638632236091437467
   FileSizes:
   - Name: Desktop
     Value: 1462
@@ -196,7 +196,7 @@ MonoBehaviour:
   - {fileID: 3157481946603347316}
   StringsBanks:
   - {fileID: -3059663877345281342}
-  cacheTime: 638629709379945045
+  cacheTime: 638632236091738207
   cacheVersion: 131619
 --- !u!114 &260255961525818449
 MonoBehaviour:
@@ -240,7 +240,7 @@ MonoBehaviour:
   Path: ../FMODStudioProjectFolder/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638626627773980411
+  lastModified: 638628918784568361
   FileSizes:
   - Name: Desktop
     Value: 2010
@@ -287,10 +287,10 @@ MonoBehaviour:
   Path: ../FMODStudioProjectFolder/Build/Desktop/Mission01Bank.bank
   Name: Mission01Bank
   StudioPath: bank:/Mission01Bank
-  lastModified: 638624879837960772
+  lastModified: 638628918931292696
   FileSizes:
   - Name: Desktop
-    Value: 13263200
+    Value: 13263424
   Exists: 1
 --- !u!114 &7942850227092933250
 MonoBehaviour:

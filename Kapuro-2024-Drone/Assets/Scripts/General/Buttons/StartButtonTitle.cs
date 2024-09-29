@@ -5,10 +5,12 @@ using UnityEngine.UI;
 
 public class StartButtonTitle : AbstractButton
 {
+    [SerializeField] private MainTitle mainTitle;
+    
     // @brief ボタン押下でGameシーン呼び出し
     private void StartGameButton()
     {
-        SceneController.LoadScene("Game");
+        mainTitle.IsStartButtonPushed = true;
     }
     
     // @override

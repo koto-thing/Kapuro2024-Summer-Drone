@@ -21,7 +21,6 @@ public class ObstacleFactryController : MonoBehaviour
     
     public async UniTask Initialize()
     {
-        
         await UniTask.CompletedTask;
     }
 

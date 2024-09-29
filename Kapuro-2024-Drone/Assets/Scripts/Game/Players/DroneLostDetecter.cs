@@ -55,23 +55,28 @@ public class DroneLostDetecter : MonoBehaviour
             gameObject.transform.DORotate(droneDirection, 2.0f, RotateMode.Fast);
             gameObject.transform.DOMove(dronePosition, 2.0f)
                 .OnComplete(() => { isDroneLost = false; });
+            lostPopUpSprite.GetComponent<SpriteRenderer>().DOFade(0.0f, 0.5f)
+                .OnComplete(() => { lostPopUp.SetActive(false); });
         }
 
         if (isDroneLost == false)
         {
-            if (timer > 0) timer -= Time.deltaTime;
+            if (timer > 0) timer = 0;
             studioEventEmitter.SetParameter("BGM01Param", timer, false);
         }
     }
     
-    private void OnBecameVisible()
+    // @brief ドローンが見失われた時の処理
+    public void OnBecameVisible()
     {
         isDroneLost = false;
-        lostPopUpSprite.GetComponent<SpriteRenderer>().DOFade(0.0f, 0.5f);
-        lostPopUp.SetActive(false);
+        timer = 0;
+        lostPopUpSprite.GetComponent<SpriteRenderer>().DOFade(0.0f, 0.5f)
+            .OnComplete(() => { lostPopUp.SetActive(false); });
     }
 
-    private void OnBecameInvisible()
+    // @brief ドローンが見失われた時の処理
+    public void OnBecameInvisible()
     {
         // ドローンが最初に見失われた時の位置を記録
         if (isDroneLost == false)
@@ -83,7 +88,7 @@ public class DroneLostDetecter : MonoBehaviour
         FixDronePosition();
         
         lostPopUp.SetActive(true);
-        lostPopUpSprite.GetComponent<SpriteRenderer>().DOFade(1.0f, 0.5f);
+        lostPopUpSprite.GetComponent<SpriteRenderer>().DOFade(0.8f, 1f);
     }
 
     private void FixDronePosition()
