@@ -13,6 +13,8 @@ TagManager:
   - Jammer
   - Special Bird
   - BigBird
+  - Box
+  - DronePort
   layers:
   - Default
   - TransparentFX
@@ -53,9 +55,6 @@ TagManager:
   - name: PopUp
     uniqueID: 3587006373
     locked: 0
-  - name: Dialogue
-    uniqueID: 1900235169
-    locked: 0
   - name: Button
     uniqueID: 3601812339
     locked: 0
@@ -64,4 +63,7 @@ TagManager:
     locked: 0
   - name: Switch Animation
     uniqueID: 2693506589
+    locked: 0
+  - name: Dialogue
+    uniqueID: 1900235169
     locked: 0

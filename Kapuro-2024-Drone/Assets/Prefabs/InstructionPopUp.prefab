@@ -239,8 +239,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3059\u3079\u3066\u306E\u30D5\u30E9\u30C3\u30B0\u306B\u30BF\u30C3\u30C1\u3057\u307E\u3057\u3087\u3046"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f63b6597f04ec134db122c8d9c2019ef, type: 2}
-  m_sharedMaterial: {fileID: 7415094565446512737, guid: f63b6597f04ec134db122c8d9c2019ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -319,6 +319,7 @@ GameObject:
   - component: {fileID: 9025705661326249109}
   - component: {fileID: 4486102033766396816}
   - component: {fileID: 8396792304195759613}
+  - component: {fileID: 6965391607365257908}
   m_Layer: 5
   m_Name: OKButton
   m_TagString: Untagged
@@ -440,6 +441,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36bb30e615dd4b08b89bb8c406a071d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6965391607365257908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5711635343547145610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1740202930
+      Data2: 1205585427
+      Data3: -1801972600
+      Data4: 139163925
+    Path: event:/Title/SE/ClickSE
+  Event: 
+  PlayEvent: 20
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &6212726070626799833
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,8 +539,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u30C9\u30ED\u30FC\u30F3\u306E\u4FE1\u53F7\u304C\u5931\u308F\u308C\u307E\u3059"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f63b6597f04ec134db122c8d9c2019ef, type: 2}
-  m_sharedMaterial: {fileID: 7415094565446512737, guid: f63b6597f04ec134db122c8d9c2019ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

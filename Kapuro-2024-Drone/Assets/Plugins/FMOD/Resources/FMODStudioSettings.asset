@@ -334,6 +334,7 @@ MonoBehaviour:
   Banks:
   - Mission01Bank
   - SampleBank
+  - Title
   - TutorialBank
   BanksToLoad: []
   LiveUpdatePort: 9264

@@ -18,6 +18,7 @@ public class BigBirdWithTree : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            moveTween.Kill();
             moveTween = bigBird.transform.DOMove(other.transform.position, 10f);
         }
     }
@@ -26,7 +27,9 @@ public class BigBirdWithTree : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            bigBird.transform.DOMove(previousPosition, 5f);
+            moveTween.Kill();
+            moveTween = bigBird.transform.DOMove(previousPosition, 5f)
+                .OnComplete(() => bigBird.transform.position = previousPosition);
         }
     }
 }

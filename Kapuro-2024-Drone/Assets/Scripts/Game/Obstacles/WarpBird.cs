@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.Animations;
 
@@ -23,6 +24,7 @@ public class WarpBird : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            GetComponent<StudioEventEmitter>().Play();
             Collider2D playerCollider = other.transform.GetComponent<Collider2D>();
 
             if (playerCollider != null)
@@ -32,28 +34,26 @@ public class WarpBird : MonoBehaviour
 
                 // Playerと自身の移動を同期させる
                 Sequence sequence = DOTween.Sequence();
-                sequence.Append(other.transform.DOLocalMove(new Vector3(target.x, target.y, target.z), 5f));   // Playerを移動
-                sequence.Join(transform.DOMove(target, 5f));          // 自身も移動
-
-                // 移動完了後の処理
-                sequence.OnComplete(() =>
-                {
-                    playerCollider.isTrigger = false;  // トリガーを戻す（当たり判定を元に戻す）
-                    spriteRenderer.DOFade(0, 1f).OnComplete(() =>
+                sequence.Append(other.transform.DOLocalMove(new Vector3(target.x, target.y, target.z), 5f))   // Playerを移動
+                    .Join(transform.DOMove(target, 5f))          // 自身も移動
+                    .AppendCallback(() => playerCollider.isTrigger = false)  // トリガーを元に戻す
+                    .Append(spriteRenderer.DOFade(0, 1f))  // フェードアウト
+                    .AppendCallback(() =>
                     {
                         if (isBerakable)
+                        {
                             Destroy(gameObject);
+                        }
                         else
                         {
-                            transform.position = previousPosition;
-                            spriteRenderer.DOFade(1, 1f);
+                            transform.position = previousPosition;  // 初期位置に戻す
                         }
-                    });  // 自身を削除
-                });
+                    })
+                    .Append(spriteRenderer.DOFade(1, 1f));  // フェードイン
             }
         }
     }
-
+    
     private void Start()
     {
         previousPosition = transform.position;

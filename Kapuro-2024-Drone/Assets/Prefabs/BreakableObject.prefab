@@ -221,7 +221,7 @@ MonoBehaviour:
       Data2: 1189333046
       Data3: -32221030
       Data4: -2114591937
-    Path: event:/Balloon
+    Path: event:/Mission01/SE/Balloon
   Event: 
   PlayEvent: 9
   StopEvent: 0

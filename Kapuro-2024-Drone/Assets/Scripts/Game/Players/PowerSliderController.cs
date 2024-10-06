@@ -45,7 +45,5 @@ public class PowerSliderController : MonoBehaviour
     public void ResetSlider()
     {
         powerSlider.value = 0;
-        transform.DOLocalMove(new Vector3(0, -3.0f, 0), 1.0f);
-        transform.DOLocalRotate(new Vector3(0, 0, 0), 1.0f);
     }
 }

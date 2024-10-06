@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2460778641485218392}
   - component: {fileID: 4557154184811186852}
   - component: {fileID: 755155821727977170}
+  - component: {fileID: 4844738677712893011}
+  - component: {fileID: 3175355160325362636}
   m_Layer: 0
   m_Name: TreeObject
   m_TagString: Block
@@ -96,6 +98,49 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 100, y: 135}
   m_Direction: 0
+--- !u!114 &4844738677712893011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724017143262232456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8980d44525cd467ebc2137e7551ed3da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3175355160325362636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724017143262232456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1761973225
+      Data2: 1173270722
+      Data3: 645027211
+      Data4: 1981774867
+    Path: event:/Mission01/SE/DroneHit
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1671308506990858026
 GameObject:
   m_ObjectHideFlags: 0

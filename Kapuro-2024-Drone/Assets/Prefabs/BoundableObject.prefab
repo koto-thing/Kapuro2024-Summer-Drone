@@ -209,7 +209,7 @@ MonoBehaviour:
       Data2: 1078155445
       Data3: 632567472
       Data4: -1624639234
-    Path: event:/Bound
+    Path: event:/Mission01/SE/Bound
   Event: 
   PlayEvent: 9
   StopEvent: 0

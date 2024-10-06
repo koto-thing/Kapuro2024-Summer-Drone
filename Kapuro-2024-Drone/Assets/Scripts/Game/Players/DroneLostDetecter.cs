@@ -66,8 +66,17 @@ public class DroneLostDetecter : MonoBehaviour
         }
     }
     
-    // @brief ドローンが見失われた時の処理
+    // @brief ドローンが画面内に出たの処理
     public void OnBecameVisible()
+    {
+        isDroneLost = false;
+        timer = 0;
+        lostPopUpSprite.GetComponent<SpriteRenderer>().DOFade(0.0f, 0.5f)
+            .OnComplete(() => { lostPopUp.SetActive(false); });
+    }
+    
+    // @brief ドローンが見失われた時の処理
+    public void OnBecomeUnJamming()
     {
         isDroneLost = false;
         timer = 0;
@@ -82,6 +91,23 @@ public class DroneLostDetecter : MonoBehaviour
         if (isDroneLost == false)
         {
             dronePosition = gameObject.transform.position;
+            isDroneLost = true;
+        }
+        
+        FixDronePosition();
+        
+        lostPopUp.SetActive(true);
+        lostPopUpSprite.GetComponent<SpriteRenderer>().DOFade(0.8f, 1f);
+    }
+    
+    // @brief ドローンが見失われた時の処理
+    public void OnBecomeJamming()
+    {
+        // ドローンが最初に見失われた時の位置を記録
+        if (isDroneLost == false)
+        {
+            dronePosition = gameObject.transform.position;
+            timer = 0;
             isDroneLost = true;
         }
         

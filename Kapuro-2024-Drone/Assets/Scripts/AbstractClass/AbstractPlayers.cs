@@ -2,7 +2,7 @@
 
 public abstract class AbstractPlayers : MonoBehaviour
 {
-    public enum PlayerState { Idle, DirectionSetting, PowerSetting, Move }
+    public enum PlayerState { Idle, DirectionSetting, PowerSetting, Move, Reset }
 
     private float speed;
     private Vector3 playerDirection;
@@ -18,4 +18,5 @@ public abstract class AbstractPlayers : MonoBehaviour
     public abstract void DirectionSetting();
     public abstract void PowerSetting();
     public abstract void MoveDrone();
+    public abstract void ResetParameters();
 }

@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using FMODUnity;
 using UnityEngine;
 
 public class FloatingFoop : MonoBehaviour
@@ -11,7 +12,8 @@ public class FloatingFoop : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D other)
     {
-        
+        if(other.gameObject.CompareTag("Player"))
+            gameObject.GetComponent<StudioEventEmitter>().Play();
     }
 
     private void Start()

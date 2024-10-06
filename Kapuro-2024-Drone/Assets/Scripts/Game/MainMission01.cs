@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
+using FMODUnity;
 using UnityEngine;
 
 public class MainMission01 : AbstractGameMain
@@ -55,7 +56,10 @@ public class MainMission01 : AbstractGameMain
                 
                 // ゲーム終了判定
                 if (targetController.FinishGameHandler())
+                {
+                    GetComponent<StudioEventEmitter>().Play();
                     ChangeState(GameState.FINISH);
+                }
                 break;
             
             /* ゲーム終了時の処理 */

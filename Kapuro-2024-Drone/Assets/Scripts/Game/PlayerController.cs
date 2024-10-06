@@ -34,6 +34,9 @@ public class PlayerController : MonoBehaviour
             case AbstractPlayers.PlayerState.Move: 
                 player.MoveDrone(); 
                 break;
+            case AbstractPlayers.PlayerState.Reset:
+                player.ResetParameters();
+                break;
         }
         
         player.PlayerUpdate();
