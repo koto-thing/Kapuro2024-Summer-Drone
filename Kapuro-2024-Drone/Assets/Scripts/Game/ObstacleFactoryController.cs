@@ -114,6 +114,6 @@ public class ObstacleFactryController : MonoBehaviour
         float randomOffset = Random.Range(-30.0f, 30.0f);
         angle += randomOffset;
 
-        return Quaternion.Euler(new Vector3(0, 0, angle));
+        return Quaternion.Euler(new Vector3(0, 0, angle + 180));
     }
 }

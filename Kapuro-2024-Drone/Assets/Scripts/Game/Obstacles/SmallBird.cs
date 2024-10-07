@@ -39,7 +39,7 @@ public class SmallBird : AbstractBird
 
         // 鳥の向きを指定された方向に合わせて回転
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 180));
     }
 
     private void Move()

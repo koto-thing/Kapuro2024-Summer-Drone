@@ -40,13 +40,13 @@ public class WarpBird : MonoBehaviour
                     .Append(spriteRenderer.DOFade(0, 1f))  // フェードアウト
                     .AppendCallback(() =>
                     {
-                        if (isBerakable)
+                        if (isBerakable) // isBreakableがtrueの場合
                         {
-                            Destroy(gameObject);
+                            Destroy(gameObject); // オブジェクトを削除
                         }
                         else
                         {
-                            transform.position = previousPosition;  // 初期位置に戻す
+                            transform.position = previousPosition;  // 元の位置に戻す
                         }
                     })
                     .Append(spriteRenderer.DOFade(1, 1f));  // フェードイン

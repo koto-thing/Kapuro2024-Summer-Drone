@@ -149,7 +149,7 @@ Transform:
   m_GameObject: {fileID: 140140334}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 180, z: 0}
+  m_LocalPosition: {x: 0, y: 210, z: 0}
   m_LocalScale: {x: 25, y: 25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1112,8 +1112,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Audio Engine : FMOD Studio by Firelight Technologies Pty Ltd.\nVoiceBosch\npixabay\n\u3044\u3089\u3059\u3068\u3084\nBeach
-    Twon by Reo\nQuiet Ocean by PeriTune\nLost in the Woods by PeriTune"
+  m_text: "Audio Engine : FMOD Studio by Firelight Technologies Pty Ltd.\nVoiceBosch\npixabay\n\u3044\u3089\u3059\u3068\u3084\nICOOON
+    MONO\nBeach Twon by Reo\nQuiet Ocean by PeriTune\nLost in the Woods by PeriTune"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 26e5109aa0f12204da7d328ad00a89b9, type: 2}
   m_sharedMaterial: {fileID: 6042244174972688862, guid: 26e5109aa0f12204da7d328ad00a89b9, type: 2}
@@ -1415,9 +1415,12 @@ MonoBehaviour:
   buttonController: {fileID: 432475413}
   titleCanvas: {fileID: 0}
   startCanvas: {fileID: 0}
+  wikiCanvas: {fileID: 0}
   backgroundAnimation: {fileID: 0}
   isStartButtonPushed: 0
   isBackToTitleButtonPushed: 0
+  isWikiBackToTitleButtonPushed: 0
+  isWikiButtonPushed: 0
 --- !u!4 &1886020269
 Transform:
   m_ObjectHideFlags: 0

@@ -18,6 +18,9 @@ public class MainMission01 : AbstractGameMain
     [Header("Game State")]
     [SerializeField] private GameState gameState;
     
+    [Header("Audio")]
+    StudioEventEmitter studioEventEmitter;
+    
     [Header("Flag")]
     [SerializeField] private bool isLastDialogueLoaded = false;
     
@@ -57,7 +60,6 @@ public class MainMission01 : AbstractGameMain
                 // ゲーム終了判定
                 if (targetController.FinishGameHandler())
                 {
-                    GetComponent<StudioEventEmitter>().Play();
                     ChangeState(GameState.FINISH);
                 }
                 break;
@@ -69,9 +71,12 @@ public class MainMission01 : AbstractGameMain
                     dialogueController.LoadDialogue();
                     isLastDialogueLoaded = true;
                 }
-                
-                if(dialogueController.IsFirstDialogueFinished)
+
+                if (dialogueController.IsFirstDialogueFinished)
+                {
                     SceneController.LoadScene("Title");
+                }
+                    
                 break;
         }
         
