@@ -5,7 +5,6 @@ public class VirtualCameraSwitcher : MonoBehaviour
 {
     [SerializeField] private CinemachineVirtualCamera targetVirtualCamera = default; // 移動先の仮想カメラ
     private CinemachineVirtualCamera TargetVirtualCamera => targetVirtualCamera;
-    [SerializeField] private CinemachineVirtualCamera previousVirtualCamera; // 移動前の仮想カメラ
 
     [SerializeField] private CinemachineBrain cinemachineBrain; // メインカメラのCinemachineBrain
 
@@ -18,13 +17,20 @@ public class VirtualCameraSwitcher : MonoBehaviour
     }
 
     // @brief プレイヤーが自身の当たり判定に触れた時に呼ばれる
-    private void OnTriggerEnter2D(Collider2D collider)
+    private void OnTriggerStay2D(Collider2D collider)
+    {
+        if (collider.CompareTag("Player") == false)
+            return;
+        
+        EnableTargetVirtualCamera();
+    }
+    
+    private void OnTriggerExit2D(Collider2D collider)
     {
         if (collider.CompareTag("Player") == false)
             return;
         
         DisableCurrentVirtualCamera();
-        EnableTargetVirtualCamera();
     }
 
     // @brief 現在の仮想カメラを無効化
@@ -32,7 +38,6 @@ public class VirtualCameraSwitcher : MonoBehaviour
     {
         var current = this.cinemachineBrain.ActiveVirtualCamera as CinemachineVirtualCamera;
         current.Priority = 0;
-        previousVirtualCamera = current;
     }
     
     // @brief 移動先の仮想カメラを有効化
@@ -40,6 +45,5 @@ public class VirtualCameraSwitcher : MonoBehaviour
     {
         TargetVirtualCamera.enabled = true;
         TargetVirtualCamera.Priority = EnableVirtualCameraPriority;
-        targetVirtualCamera = previousVirtualCamera; // 移動先の仮想カメラを移動前の仮想カメラに設定
     }
 }

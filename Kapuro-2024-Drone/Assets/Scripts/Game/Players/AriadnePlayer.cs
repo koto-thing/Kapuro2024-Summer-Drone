@@ -166,6 +166,9 @@ public class AriadnePlayer : AbstractPlayers
     // @override
     public override void MoveDrone()
     {
+        if (directionAriadne == null)
+            ChangeState(PlayerState.Reset); // directionAriadneがnullの場合、プレイヤーの状態を移行
+        
         moveDirection = directionAriadne.up.normalized * (1 + powerAriadne / 100);
         movePosition = transform.position + moveDirection.normalized * (2 * (powerAriadne + speedAriadne) ); // 移動先位置を計算
         

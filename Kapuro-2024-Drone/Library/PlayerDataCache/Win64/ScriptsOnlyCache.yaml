@@ -1739,7 +1739,7 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerIntField
   - hash:
       serializedVersion: 2
-      Hash: 900c01a8ff585aed6e338f71f9f10a58
+      Hash: 67f6a38874d2683dc9bfee2d8db6224f
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: VirtualCameraSwitcher

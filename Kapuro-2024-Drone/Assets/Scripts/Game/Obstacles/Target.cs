@@ -29,6 +29,7 @@ public class Target : MonoBehaviour, IChangeable
             foreach (var particleSystem in particleSystems)
                 particleSystem.Play();
             studioEventEmitter.Play();
+            GetComponent<Collider2D>().enabled = false;
             spriteRenderer.enabled = false;
         }
     }
