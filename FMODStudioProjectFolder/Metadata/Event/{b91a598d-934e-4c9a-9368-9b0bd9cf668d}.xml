@@ -5,7 +5,7 @@
 			<value>GoalFlag</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{c13f2ee5-f5eb-4715-a000-fd4eccd32977}</destination>
@@ -113,6 +113,7 @@
 	<object class="MixerBusEffectChain" id="{38346cad-c88b-450d-b66e-e3060dae60cd}">
 		<relationship name="effects">
 			<destination>{fb7881f7-6f8c-4d7d-b342-a18c6a181ed1}</destination>
+			<destination>{db91fdbb-b417-4dbb-ab64-727b6782423f}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{ffc059e9-9e86-405a-8b1a-7c0ebd078286}" />
@@ -129,5 +130,16 @@
 	</object>
 	<object class="MixerBusPanner" id="{df0e59a8-047c-4e18-8a96-a9ccdaa0d3d7}" />
 	<object class="MixerBusFader" id="{fb7881f7-6f8c-4d7d-b342-a18c6a181ed1}" />
+	<object class="SpatialiserEffect" id="{db91fdbb-b417-4dbb-ab64-727b6782423f}">
+		<property name="distanceRolloffType">
+			<value>2</value>
+		</property>
+		<property name="maximumDistance">
+			<value>5</value>
+		</property>
+		<property name="overrideRange">
+			<value>true</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{edd185d9-718f-48b8-b790-4ffa0054842d}" />
 </objects>

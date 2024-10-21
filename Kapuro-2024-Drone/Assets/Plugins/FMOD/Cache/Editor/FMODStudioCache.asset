@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: ../FMODStudioProjectFolder/Build/Desktop/SampleBank.bank
   Name: SampleBank
   StudioPath: bank:/SampleBank
-  lastModified: 638638321922590695
+  lastModified: 638651475298479624
   FileSizes:
   - Name: Desktop
     Value: 494
@@ -67,8 +67,8 @@ MonoBehaviour:
     Data4: -2114591937
   Banks:
   - {fileID: -5030514589281608752}
-  IsStream: 0
-  Is3D: 0
+  IsStream: 1
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -118,8 +118,8 @@ MonoBehaviour:
     Data4: -1997954977
   Banks:
   - {fileID: 7576351284807463849}
-  IsStream: 0
-  Is3D: 0
+  IsStream: 1
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -145,7 +145,7 @@ MonoBehaviour:
     Data4: 139163925
   Banks:
   - {fileID: 8128617358015172579}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
   IsOneShot: 1
   Parameters: []
@@ -172,8 +172,8 @@ MonoBehaviour:
     Data4: -1922641959
   Banks:
   - {fileID: -5030514589281608752}
-  IsStream: 0
-  Is3D: 0
+  IsStream: 1
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -194,10 +194,10 @@ MonoBehaviour:
   Path: ../FMODStudioProjectFolder/Build/Desktop/TutorialBank.bank
   Name: TutorialBank
   StudioPath: bank:/TutorialBank
-  lastModified: 638638535026258070
+  lastModified: 638651494911680191
   FileSizes:
   - Name: Desktop
-    Value: 3893248
+    Value: 4831968
   Exists: 1
 --- !u!114 &-3403214008251291675
 MonoBehaviour:
@@ -219,8 +219,8 @@ MonoBehaviour:
     Data4: -921797453
   Banks:
   - {fileID: 7576351284807463849}
-  IsStream: 0
-  Is3D: 0
+  IsStream: 1
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -241,7 +241,7 @@ MonoBehaviour:
   Path: ../FMODStudioProjectFolder/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638638551505020068
+  lastModified: 638651475171107862
   FileSizes:
   - Name: Desktop
     Value: 2016
@@ -266,8 +266,8 @@ MonoBehaviour:
     Data4: -1624639234
   Banks:
   - {fileID: -5030514589281608752}
-  IsStream: 0
-  Is3D: 0
+  IsStream: 1
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -293,8 +293,8 @@ MonoBehaviour:
     Data4: -1922502146
   Banks:
   - {fileID: 7576351284807463849}
-  IsStream: 0
-  Is3D: 0
+  IsStream: 1
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -365,7 +365,7 @@ MonoBehaviour:
   - {fileID: 3157481946603347316}
   StringsBanks:
   - {fileID: -3059663877345281342}
-  cacheTime: 638638554647340329
+  cacheTime: 638651494911680191
   cacheVersion: 131619
 --- !u!114 &85510223908375497
 MonoBehaviour:
@@ -387,8 +387,8 @@ MonoBehaviour:
     Data4: 1981774867
   Banks:
   - {fileID: 7576351284807463849}
-  IsStream: 0
-  Is3D: 0
+  IsStream: 1
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -414,8 +414,8 @@ MonoBehaviour:
     Data4: 1855559391
   Banks:
   - {fileID: -5030514589281608752}
-  IsStream: 0
-  Is3D: 0
+  IsStream: 1
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -441,8 +441,8 @@ MonoBehaviour:
     Data4: -291927055
   Banks:
   - {fileID: -5030514589281608752}
-  IsStream: 0
-  Is3D: 0
+  IsStream: 1
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -468,8 +468,8 @@ MonoBehaviour:
     Data4: -1649503249
   Banks:
   - {fileID: 7576351284807463849}
-  IsStream: 0
-  Is3D: 0
+  IsStream: 1
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -495,8 +495,8 @@ MonoBehaviour:
     Data4: 1134412217
   Banks:
   - {fileID: 7576351284807463849}
-  IsStream: 0
-  Is3D: 0
+  IsStream: 1
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -517,7 +517,7 @@ MonoBehaviour:
   Path: ../FMODStudioProjectFolder/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638638551505004990
+  lastModified: 638651475171087873
   FileSizes:
   - Name: Desktop
     Value: 2122
@@ -565,10 +565,10 @@ MonoBehaviour:
   Path: ../FMODStudioProjectFolder/Build/Desktop/Mission01Bank.bank
   Name: Mission01Bank
   StudioPath: bank:/Mission01Bank
-  lastModified: 638638554647340329
+  lastModified: 638651494911437081
   FileSizes:
   - Name: Desktop
-    Value: 13340064
+    Value: 16905536
   Exists: 1
 --- !u!114 &7942850227092933250
 MonoBehaviour:
@@ -590,8 +590,8 @@ MonoBehaviour:
     Data4: -1801587033
   Banks:
   - {fileID: 7576351284807463849}
-  IsStream: 0
-  Is3D: 0
+  IsStream: 1
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -612,10 +612,10 @@ MonoBehaviour:
   Path: ../FMODStudioProjectFolder/Build/Desktop/Title.bank
   Name: Title
   StudioPath: bank:/Title
-  lastModified: 638638546198967377
+  lastModified: 638651475329359871
   FileSizes:
   - Name: Desktop
-    Value: 5266848
+    Value: 6583552
   Exists: 1
 --- !u!114 &8433319441149311636
 MonoBehaviour:

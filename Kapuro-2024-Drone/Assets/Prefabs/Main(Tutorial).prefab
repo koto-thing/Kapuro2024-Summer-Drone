@@ -4645,6 +4645,10 @@ PrefabInstance:
       propertyPath: powerSliderControllerAriadne
       value: 
       objectReference: {fileID: 3860365139283925666}
+    - target: {fileID: 4379267875513781549, guid: 4d37afc404dfed7469672c32ca55c49f, type: 3}
+      propertyPath: attenuationObject
+      value: 
+      objectReference: {fileID: 1541339990472648620}
     - target: {fileID: 6917194676288289355, guid: 4d37afc404dfed7469672c32ca55c49f, type: 3}
       propertyPath: m_TagString
       value: Player
@@ -4754,6 +4758,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d37afc404dfed7469672c32ca55c49f, type: 3}
+--- !u!1 &1541339990472648620 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6917194676288289355, guid: 4d37afc404dfed7469672c32ca55c49f, type: 3}
+  m_PrefabInstance: {fileID: 5376523240965086695}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &3911923808984134951 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8995041527570852032, guid: 4d37afc404dfed7469672c32ca55c49f, type: 3}
