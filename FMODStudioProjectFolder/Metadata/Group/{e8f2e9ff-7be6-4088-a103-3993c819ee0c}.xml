@@ -22,6 +22,18 @@
 	</object>
 	<object class="MixerBusPanner" id="{f6b7ad89-b915-459b-b9cb-3bf70c906976}" />
 	<object class="CompressorEffect" id="{dcf7d10c-ed43-4687-9031-8a4bbfb58ac2}">
+		<property name="ratio">
+			<value>2.10000014</value>
+		</property>
+		<property name="attackTime">
+			<value>10</value>
+		</property>
+		<property name="releaseTime">
+			<value>50</value>
+		</property>
+		<property name="gain">
+			<value>-6</value>
+		</property>
 		<relationship name="sidechains">
 			<destination>{c36cab64-7e9b-44ed-927d-1989086afcc8}</destination>
 		</relationship>

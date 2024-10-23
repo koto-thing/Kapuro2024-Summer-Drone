@@ -9,9 +9,11 @@ public abstract class AbstractPlayers : MonoBehaviour
     private float playerPower;
     private PlayerState state;
     private ArrowController arrowController;
+    private bool isMoveable;
     
     public virtual PlayerState State { get; }
     public virtual bool IsOutofControl { get; set; }
+    public virtual bool IsMoveable { get { return isMoveable; } set { isMoveable = value; } }
     public abstract void Initialize();
     public abstract void PlayerUpdate();
     public abstract void ChangeState();

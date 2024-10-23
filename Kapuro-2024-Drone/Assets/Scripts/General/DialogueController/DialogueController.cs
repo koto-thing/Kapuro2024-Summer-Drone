@@ -83,7 +83,7 @@ public class DialogueController : MonoBehaviour
         }
         else if(dialogue.IsButtonPushed && currentStringIndex == csvReader.LastRow)
         {
-            SetDialogue("", "(ボタンを押して次に進む)");
+            SetDialogue("", "(Press the button to proceed...)");
         }
         else if(dialogue.IsButtonPushed && currentStringIndex > csvReader.LastRow)
         {

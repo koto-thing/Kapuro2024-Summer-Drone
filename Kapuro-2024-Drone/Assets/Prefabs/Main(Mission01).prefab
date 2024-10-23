@@ -725,7 +725,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 450, y: 450}
-  m_SizeDelta: {x: 500, y: 100}
+  m_SizeDelta: {x: 750, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2723173143080455723
 CanvasRenderer:
@@ -755,7 +755,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u6B8B\u308A\u306E\u76EE\u6A19\uFF1A"
+  m_text: "Remaining goals\uFF1A"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 26e5109aa0f12204da7d328ad00a89b9, type: 2}
   m_sharedMaterial: {fileID: 6042244174972688862, guid: 26e5109aa0f12204da7d328ad00a89b9, type: 2}
@@ -2514,7 +2514,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u30D1\u30EF\u30FC"
+  m_text: Power
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 26e5109aa0f12204da7d328ad00a89b9, type: 2}
   m_sharedMaterial: {fileID: 6042244174972688862, guid: 26e5109aa0f12204da7d328ad00a89b9, type: 2}
@@ -26481,6 +26481,10 @@ PrefabInstance:
       value: TitleButton
       objectReference: {fileID: 0}
     - target: {fileID: 3325034899008164986, guid: 6c0a701e3caa07944b0698ce529a524f, type: 3}
+      propertyPath: m_text
+      value: Back To Title
+      objectReference: {fileID: 0}
+    - target: {fileID: 3325034899008164986, guid: 6c0a701e3caa07944b0698ce529a524f, type: 3}
       propertyPath: m_fontSize
       value: 20.7
       objectReference: {fileID: 0}
@@ -39300,6 +39304,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 7010039858719498922}
     m_Modifications:
     - target: {fileID: 585239070626177707, guid: a1c19e4fd6d0cf147af3d4454cd23474, type: 3}
+      propertyPath: m_text
+      value: "\rLet's touch all flags!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 585239070626177707, guid: a1c19e4fd6d0cf147af3d4454cd23474, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: 26e5109aa0f12204da7d328ad00a89b9, type: 2}
@@ -46934,6 +46942,10 @@ PrefabInstance:
     - target: {fileID: 2418228712194899548, guid: a8090b9cf3412b846ae70b04610a8d29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3061237605642094722, guid: a8090b9cf3412b846ae70b04610a8d29, type: 3}
+      propertyPath: m_text
+      value: "\rDrone signal is lost..."
       objectReference: {fileID: 0}
     - target: {fileID: 3061237605642094722, guid: a8090b9cf3412b846ae70b04610a8d29, type: 3}
       propertyPath: m_fontSize

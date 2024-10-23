@@ -1,9 +1,9 @@
-﻿インストラクター,こんにちは！
-インストラクター,これからVR空間でドローンの飛行訓練を行います
-インストラクター,まずは、ドローンの基本操作から説明します
-インストラクター,"スペースキーを押して移動量を決めて、
-それからもう一度スペースキーを押して移動方向決めてください"
-インストラクター,そうするとドローンが矢印方向に移動を開始します
-インストラクター,ボタンを連打すると、ドローンは矢印方向に移動し続けます
-インストラクター,今回の訓練の目標は、２つのフラッグを確保することです
-インストラクター,それじゃ、よろしくお願いしますね！
+﻿Instructor,Hello!(You can send messages by pressing the space key.)
+Instructor,"From now on, we will conduct drone flight training in VR space."
+Instructor,"First, we will explain the basic operations of the drone."
+Instructor,"Press the space key to determine the amount of movement, 
+Then press the space bar again to decide the direction of movement."
+Instructor,The drone will then start moving in the direction of the arrow.
+Instructor,"If you press the button repeatedly, the drone will continue to move in the direction of the arrow."
+Instructor,The goal of this training is to secure two flags.
+Instructor,"Well then, thank you very much!"

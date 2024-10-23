@@ -194,7 +194,7 @@ MonoBehaviour:
   Path: ../FMODStudioProjectFolder/Build/Desktop/TutorialBank.bank
   Name: TutorialBank
   StudioPath: bank:/TutorialBank
-  lastModified: 638651494911680191
+  lastModified: 638653305827498671
   FileSizes:
   - Name: Desktop
     Value: 4831968
@@ -241,10 +241,10 @@ MonoBehaviour:
   Path: ../FMODStudioProjectFolder/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638651475171107862
+  lastModified: 638653305824001263
   FileSizes:
   - Name: Desktop
-    Value: 2016
+    Value: 2054
   Exists: 1
 --- !u!114 &-2583369829982889962
 MonoBehaviour:
@@ -360,12 +360,13 @@ MonoBehaviour:
   - {fileID: -2317688939599618088}
   - {fileID: -5852305022329486825}
   - {fileID: 2092664136727481439}
+  - {fileID: 2396898000266626741}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3157481946603347316}
   StringsBanks:
   - {fileID: -3059663877345281342}
-  cacheTime: 638651494911680191
+  cacheTime: 638653305827498671
   cacheVersion: 131619
 --- !u!114 &85510223908375497
 MonoBehaviour:
@@ -502,6 +503,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 710
+--- !u!114 &2396898000266626741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Mission01/SE/Jammer
+  m_EditorClassIdentifier: 
+  Path: event:/Mission01/SE/Jammer
+  Guid:
+    Data1: 79470451
+    Data2: 1336369686
+    Data3: 1874069401
+    Data4: 275346485
+  Banks:
+  - {fileID: 3157481946603347316}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 22800
 --- !u!114 &3157481946603347316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -517,10 +545,10 @@ MonoBehaviour:
   Path: ../FMODStudioProjectFolder/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638651475171087873
+  lastModified: 638653305823996220
   FileSizes:
   - Name: Desktop
-    Value: 2122
+    Value: 213120
   Exists: 1
 --- !u!114 &4548852248752001663
 MonoBehaviour:
@@ -565,7 +593,7 @@ MonoBehaviour:
   Path: ../FMODStudioProjectFolder/Build/Desktop/Mission01Bank.bank
   Name: Mission01Bank
   StudioPath: bank:/Mission01Bank
-  lastModified: 638651494911437081
+  lastModified: 638653305824691247
   FileSizes:
   - Name: Desktop
     Value: 16905536

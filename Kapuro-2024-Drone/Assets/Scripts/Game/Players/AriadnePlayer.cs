@@ -11,12 +11,14 @@ public class AriadnePlayer : AbstractPlayers
     [SerializeField] private ArrowController arrowControllerAriadne; // 矢印のコントローラー
     [SerializeField] private PowerSliderController powerSliderControllerAriadne; // パワースライダーのコントローラー
     [SerializeField] private DroneLostDetecter droneLostDetecter; // ドローンの見失い検知
+    [SerializeField] private bool isMoveable;
 
     [SerializeField] private Vector3 moveDirection; // ドローンの移動方向
     [SerializeField] private Vector3 movePosition; // ドローンの移動位置
     private Tween moveTween; // ドローンの移動タスク
     private Tween rotateTween; // ドローンの回転タスク
     
+    public override bool IsMoveable { get { return isMoveable;} set { isMoveable = value; } } // ドローンの移動可能フラグ
     public override PlayerState State { get { return stateAriadne; } }
 
     // @brief プレイヤーの状態を取得(private)
@@ -119,6 +121,7 @@ public class AriadnePlayer : AbstractPlayers
         speedAriadne = 150f;
         powerAriadne = 0;
         directionAriadne = null;
+        IsMoveable = true;
         arrowControllerAriadne.Initialize(300);
         powerSliderControllerAriadne.Initialize(100f);
         droneLostDetecter.Initialize();

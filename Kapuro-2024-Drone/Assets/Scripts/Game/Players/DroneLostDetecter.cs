@@ -51,12 +51,13 @@ public class DroneLostDetecter : MonoBehaviour
         // ドローンが見失われた時の位置に戻す
         if(isDroneLost && showTime <= 0f)
         {
-            lostText.text = "自動帰還プログラム作動中";
+            lostText.text = "Automatic return program in progress...";
+            GetComponent<AbstractPlayers>().IsMoveable = false;
             gameObject.transform.DORotate(droneDirection, 2.0f, RotateMode.Fast);
             gameObject.transform.DOMove(dronePosition, 2.0f)
-                .OnComplete(() => { isDroneLost = false; });
+                .OnComplete(() => { isDroneLost = false; GetComponent<AbstractPlayers>().IsMoveable = true; });
             lostPopUpSprite.GetComponent<SpriteRenderer>().DOFade(0.0f, 0.5f)
-                .OnComplete(() => { lostPopUp.SetActive(false); });
+                .OnComplete(() => { lostPopUp.SetActive(false);});
         }
 
         if (isDroneLost == false)

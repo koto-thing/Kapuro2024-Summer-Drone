@@ -1525,7 +1525,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 900, y: 670}
-  m_SizeDelta: {x: 500, y: 100}
+  m_SizeDelta: {x: 750, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &136243524723577055
 CanvasRenderer:
@@ -1555,7 +1555,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u6B8B\u308A\u306E\u76EE\u6A19\uFF1A"
+  m_text: "Remaining goals\uFF1A"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 26e5109aa0f12204da7d328ad00a89b9, type: 2}
   m_sharedMaterial: {fileID: 6042244174972688862, guid: 26e5109aa0f12204da7d328ad00a89b9, type: 2}
@@ -1970,7 +1970,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u30D1\u30EF\u30FC"
+  m_text: Power
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 26e5109aa0f12204da7d328ad00a89b9, type: 2}
   m_sharedMaterial: {fileID: 6042244174972688862, guid: 26e5109aa0f12204da7d328ad00a89b9, type: 2}
@@ -5710,6 +5710,10 @@ PrefabInstance:
       value: TitleButton
       objectReference: {fileID: 0}
     - target: {fileID: 3325034899008164986, guid: 6c0a701e3caa07944b0698ce529a524f, type: 3}
+      propertyPath: m_text
+      value: Back To Title
+      objectReference: {fileID: 0}
+    - target: {fileID: 3325034899008164986, guid: 6c0a701e3caa07944b0698ce529a524f, type: 3}
       propertyPath: m_fontSize
       value: 20.7
       objectReference: {fileID: 0}
@@ -5935,7 +5939,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 585239070626177707, guid: a1c19e4fd6d0cf147af3d4454cd23474, type: 3}
       propertyPath: m_text
-      value: "\u3059\u3079\u3066\u306E\u30D5\u30E9\u30C3\u30B0\u306B\u30BF\u30C3\u30C1\u3057\u3088\u3046\uFF01"
+      value: Let's touch all flags!
       objectReference: {fileID: 0}
     - target: {fileID: 585239070626177707, guid: a1c19e4fd6d0cf147af3d4454cd23474, type: 3}
       propertyPath: m_fontSize

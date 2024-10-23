@@ -25,19 +25,25 @@ public class WarpBird : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             GetComponent<StudioEventEmitter>().Play();
+            AbstractPlayers players = other.gameObject.GetComponent<AbstractPlayers>();
             Collider2D playerCollider = other.transform.GetComponent<Collider2D>();
 
             if (playerCollider != null)
             {
                 // Playerの当たり判定を無効化せず、トリガー化する
                 playerCollider.isTrigger = true;
+                other.transform.GetComponent<AbstractPlayers>().IsMoveable = false;
 
                 // Playerと自身の移動を同期させる
                 Sequence sequence = DOTween.Sequence();
-                sequence.Append(other.transform.DOLocalMove(new Vector3(target.x, target.y, target.z), 5f))   // Playerを移動
-                    .Join(transform.DOMove(target, 5f))          // 自身も移動
-                    .AppendCallback(() => playerCollider.isTrigger = false)  // トリガーを元に戻す
-                    .Append(spriteRenderer.DOFade(0, 1f))  // フェードアウト
+                sequence.Append(other.transform.DOLocalMove(new Vector3(target.x, target.y, target.z), 5f)) // Playerを移動
+                    .Join(transform.DOMove(target, 5f)) // 自身も移動
+                    .AppendCallback(() =>
+                    {
+                        players.IsMoveable = true; // Playerの移動を許可
+                        playerCollider.isTrigger = false; // トリガーを元に戻す
+                    }) 
+                    .Append(spriteRenderer.DOFade(0, 1f)) // フェードアウト
                     .AppendCallback(() =>
                     {
                         if (isBerakable) // isBreakableがtrueの場合
@@ -46,10 +52,12 @@ public class WarpBird : MonoBehaviour
                         }
                         else
                         {
-                            transform.position = previousPosition;  // 元の位置に戻す
+                            transform.position = previousPosition; // 元の位置に戻す
                         }
+
+                        Debug.Log("WarpEnd");
                     })
-                    .Append(spriteRenderer.DOFade(1, 1f));  // フェードイン
+                    .Append(spriteRenderer.DOFade(1, 1f)); // フェードイン
             }
         }
     }

@@ -2711,7 +2711,7 @@ ScriptsOnlyBuild:
     className: BaloonController
   - hash:
       serializedVersion: 2
-      Hash: c756d9a2398943e84a12002a51de0f9b
+      Hash: ad01568dee9f9ce80f4e5b795a563404
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: AriadnePlayer

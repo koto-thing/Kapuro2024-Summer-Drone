@@ -20,23 +20,26 @@ public class PlayerController : MonoBehaviour
     // @brief プレイヤーの状態を更新
     public void PlayerUpdate()
     {
-        switch(player.State) 
+        if (player.IsMoveable)
         {
-            case AbstractPlayers.PlayerState.Idle:
-                player.ChangeState();
-                break;
-            case AbstractPlayers.PlayerState.PowerSetting:
-                player.PowerSetting();
-                break;
-            case AbstractPlayers.PlayerState.DirectionSetting:
-                player.DirectionSetting();
-                break;
-            case AbstractPlayers.PlayerState.Move: 
-                player.MoveDrone(); 
-                break;
-            case AbstractPlayers.PlayerState.Reset:
-                player.ResetParameters();
-                break;
+            switch(player.State) 
+            {
+                case AbstractPlayers.PlayerState.Idle:
+                    player.ChangeState();
+                    break;
+                case AbstractPlayers.PlayerState.PowerSetting:
+                    player.PowerSetting();
+                    break;
+                case AbstractPlayers.PlayerState.DirectionSetting:
+                    player.DirectionSetting();
+                    break;
+                case AbstractPlayers.PlayerState.Move: 
+                    player.MoveDrone(); 
+                    break;
+                case AbstractPlayers.PlayerState.Reset:
+                    player.ResetParameters();
+                    break;
+            }
         }
         
         player.PlayerUpdate();
